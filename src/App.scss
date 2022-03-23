@@ -10,7 +10,23 @@ html {
 
   & .selectBlock {
     margin-bottom: 20px;
+
+    & .selectTab {
+      padding: 5px 10px;
+      background-color: beige;
+      border: 2px solid #000;
+      border-radius: 5px;
+    }
+
+    & .startButton {
+      margin-left: 20px;
+      padding: 5px 15px;
+      background-color: aquamarine;
+      border: 2px solid #000;
+      border-radius: 5px;
+    }
   }
+
 
   & .squaresBlock {
     display: grid;
@@ -66,18 +82,25 @@ html {
     display: flex;
     flex-direction: column;
     width: 200px;
-    height: 600px;
+    height: 70vh;
     padding-left: 80px;
 
     & .asideHeader {
+      width: 70%;
       height: 30px;
       font-size: 20px;
+      text-align: center;
+      background-color: antiquewhite;
+      border: 2px solid rgba($color: #d7fd6f, $alpha: 0.8);
+      border-radius: 2px;
     }
 
     & .asideList {
-      padding: 0;
+      width: 72%;
+      height: 100%;
+      padding: 10px 0;
+      background-color: rgba($color: #effccd, $alpha: 0.7);
       list-style: none;
-      max-height: 580px;
       overflow: overlay;
       -ms-overflow-style: none;
 
@@ -87,7 +110,9 @@ html {
     }
 
     & .asideItem {
+      padding: 5px;
       font-weight: 600;
+      text-align: center;
     }
   }
 }

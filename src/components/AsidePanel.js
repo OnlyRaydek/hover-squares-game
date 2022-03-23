@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 const AsidePanel = ({ squareInform }) => {
   const informEndRef = useRef(null)

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import AsidePanel from './AsidePanel';
 import { apiGet } from './helpers';
 import SelectTab from './SelectTab';
@@ -47,6 +47,7 @@ const Main = () => {
     if (modeState) {
       setSquaresArray(Array(modeState.field**2).fill(false));
       setModeFields(modeState.name);
+      setSquareInform([]);
     }
   };
 
@@ -59,8 +60,7 @@ const Main = () => {
         row ${row}
         column ${column === 0 ? modeState.field : column}
       `
-    ])
-    console.log(`row ${Math.ceil((squareId + 1) % modeState.field)}` );
+    ]);
 
     const arrayReversedSquare = [...squaresArray];
     arrayReversedSquare.splice(squareId, 1, !squaresArray[squareId]);
@@ -75,7 +75,7 @@ const Main = () => {
             fetchedItems={fetched}
             selectChange={selectChange}
           />
-          <button onClick={startGame}>Start Game</button>
+          <button className='startButton' onClick={startGame}>Start Game</button>
         </div>
         <SquaresList
           squaresArray={squaresArray}
