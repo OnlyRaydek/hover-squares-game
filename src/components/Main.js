@@ -38,11 +38,7 @@ const Main = () => {
   const [startPlay, setStartPlay] = useState(false);
 
   useEffect(() => {
-    try {
-      apiGet(setFetched);
-    } catch {
-      console.log('warn in catch');
-    }
+    apiGet(setFetched);
     // setFetched(json);
   }, []);
 
