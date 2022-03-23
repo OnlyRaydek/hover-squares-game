@@ -45,7 +45,17 @@ const Main = () => {
   };
 
   const onOverHandler = (squareId) => {
-    setSquareInform((squareInform) => [...squareInform, squareId])
+    const row = Math.ceil((squareId + 1) / modeState.field);
+    const column = Math.ceil((squareId + 1) % modeState.field);
+    setSquareInform((squareInform) => [
+      ...squareInform,
+      `
+        row ${row}
+        column ${column === 0 ? modeState.field : column}
+      `
+    ])
+    console.log(`row ${Math.ceil((squareId + 1) % modeState.field)}` );
+
     const arrayReversedSquare = [...squaresArray];
     arrayReversedSquare.splice(squareId, 1, !squaresArray[squareId]);
     setSquaresArray(arrayReversedSquare);
@@ -59,7 +69,7 @@ const Main = () => {
             fetchedItems={fetched}
             selectChange={selectChange}
           />
-          <button onClick={startGame}>Fetch API</button>
+          <button onClick={startGame}>Start Game</button>
         </div>
         <SquaresList
           squaresArray={squaresArray}

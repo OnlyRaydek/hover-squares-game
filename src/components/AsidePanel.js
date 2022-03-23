@@ -15,7 +15,7 @@ const AsidePanel = ({ squareInform }) => {
   return (
     <>
       <header className="asideHeader">
-        Aside
+        Hover Squares
       </header>
       <ul className="asideList">
         {squareInform.map((item) =>

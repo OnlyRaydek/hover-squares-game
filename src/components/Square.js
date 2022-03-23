@@ -5,8 +5,6 @@ const Square = ({
   squareId,
   onOverHandler
 }) => {
-  console.log(squareItem);
-
   return (
     <li className={classNames("square", {squareHovered: squareItem})} onMouseEnter={() => onOverHandler(squareId)}>
     </li>
