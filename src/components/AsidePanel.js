@@ -19,7 +19,7 @@ const AsidePanel = ({ squareInform }) => {
       </header>
       <ul className="asideList">
         {squareInform.map((item) =>
-          <li className={classNames("asideItem")}>
+          <li key={Math.random()} className={classNames("asideItem")}>
             {item}
           </li>
         )}
