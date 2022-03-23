@@ -1,4 +1,4 @@
-const json = [
+const jsonReserved = [
   {
     name: 'easy',
     field: 5,
@@ -20,6 +20,6 @@ export const apiGet = (setState) => {
     setState(json);
   }).catch(() => {
     console.log('warn')
-    return json;
+    setState(jsonReserved);
   })
 };
