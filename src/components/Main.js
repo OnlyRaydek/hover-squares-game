@@ -20,12 +20,21 @@ import SquaresList from './SquaresList';
 //   },
 // ];
 
+const rulesText = `
+  For start choose mode from select dropdown.
+  When you move mouse over square it's changing color into blue.
+  When you hover colored square it's changed color again into white.
+  For win you must coloring all squaers into blue.
+  Good luck!
+`;
+
 const Main = () => {
   const [fetched, setFetched] = useState([]);
   const [modeState, setModeState] = useState(null);
   const [modeFields, setModeFields] = useState('null');
   const [squaresArray, setSquaresArray] = useState([]);
-  const [squareInform, setSquareInform] = useState([])
+  const [squareInform, setSquareInform] = useState([]);
+  const [startPlay, setStartPlay] = useState(false);
 
   useEffect(() => {
     apiGet(setFetched);
@@ -35,6 +44,7 @@ const Main = () => {
   useEffect(() => {
     if (squaresArray.length > 0 && squaresArray.every(el => el === true)) {
       alert('Congrats');
+      setStartPlay(false);
     }
   }, [squaresArray])
 
@@ -48,23 +58,30 @@ const Main = () => {
       setSquaresArray(Array(modeState.field**2).fill(false));
       setModeFields(modeState.name);
       setSquareInform([]);
+      setStartPlay(true);
     }
   };
 
-  const onOverHandler = (squareId) => {
-    const row = Math.ceil((squareId + 1) / modeState.field);
-    const column = Math.ceil((squareId + 1) % modeState.field);
-    setSquareInform((squareInform) => [
-      ...squareInform,
-      `
-        row ${row}
-        column ${column === 0 ? modeState.field : column}
-      `
-    ]);
+  const rulesOfGame = () => {
+    alert(rulesText);
+  };
 
-    const arrayReversedSquare = [...squaresArray];
-    arrayReversedSquare.splice(squareId, 1, !squaresArray[squareId]);
-    setSquaresArray(arrayReversedSquare);
+  const onOverHandler = (squareId) => {
+    if (startPlay) {
+      const row = Math.ceil((squareId + 1) / modeState.field);
+      const column = Math.ceil((squareId + 1) % modeState.field);
+      setSquareInform((squareInform) => [
+        ...squareInform,
+        `
+          row ${row}
+          column ${column === 0 ? modeState.field : column}
+        `
+      ]);
+
+      const arrayReversedSquare = [...squaresArray];
+      arrayReversedSquare.splice(squareId, 1, !squaresArray[squareId]);
+      setSquaresArray(arrayReversedSquare);
+    }
   };
 
   return (
@@ -76,6 +93,7 @@ const Main = () => {
             selectChange={selectChange}
           />
           <button className='startButton' onClick={startGame}>Start Game</button>
+          <button className='rulesButton' onClick={rulesOfGame}>Rules</button>
         </div>
         <SquaresList
           squaresArray={squaresArray}
