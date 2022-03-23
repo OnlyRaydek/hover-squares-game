@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/hover-squares-game/static/css/main.02e216b7.css",
-    "main.js": "/hover-squares-game/static/js/main.8cc4cd32.js",
+    "main.js": "/hover-squares-game/static/js/main.2a7e68a2.js",
     "static/js/787.28cb0dcd.chunk.js": "/hover-squares-game/static/js/787.28cb0dcd.chunk.js",
     "index.html": "/hover-squares-game/index.html",
     "main.02e216b7.css.map": "/hover-squares-game/static/css/main.02e216b7.css.map",
-    "main.8cc4cd32.js.map": "/hover-squares-game/static/js/main.8cc4cd32.js.map",
+    "main.2a7e68a2.js.map": "/hover-squares-game/static/js/main.2a7e68a2.js.map",
     "787.28cb0dcd.chunk.js.map": "/hover-squares-game/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.02e216b7.css",
-    "static/js/main.8cc4cd32.js"
+    "static/js/main.2a7e68a2.js"
   ]
 }
