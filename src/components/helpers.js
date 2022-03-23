@@ -3,5 +3,5 @@ export const apiGet = (setState) => {
   .then((response) => response.json())
   .then((json) => {
     setState(json);
-  }).catch(() => console.log('warn'))
+  })
 };
