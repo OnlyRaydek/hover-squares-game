@@ -32,6 +32,12 @@ const Main = () => {
     // setFetched(json);
   }, []);
 
+  useEffect(() => {
+    if (squaresArray.length > 0 && squaresArray.every(el => el === true)) {
+      alert('Congrats');
+    }
+  }, [squaresArray])
+
   const selectChange =(event) => {
     const changedMode = fetched.find(el => el.name === event.target.value);
     setModeState(changedMode);
