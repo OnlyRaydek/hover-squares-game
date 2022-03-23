@@ -1,3 +1,4 @@
+//* data for game modes if api doesn't work
 const jsonReserved = [
   {
     name: 'easy',
@@ -14,12 +15,12 @@ const jsonReserved = [
 ];
 
 export const apiGet = (setState) => {
-  fetch('http://demo7919674.mockable.io/')
+  fetch('https://demo7919674.mockable.io/')
   .then((response) => response.json())
   .then((json) => {
     setState(json);
   }).catch(() => {
-    console.log('warn')
+    console.log('warn: problem with link')
     setState(jsonReserved);
   })
 };

@@ -5,22 +5,6 @@ import { apiGet } from './helpers';
 import SelectTab from './SelectTab';
 import SquaresList from './SquaresList';
 
-//* data for game modes if api doesn't work
-// const json = [
-//   {
-//     name: 'easy',
-//     field: 5,
-//   },
-//   {
-//     name: 'normal',
-//     field: 15,
-//   },
-//   {
-//     name: 'hard',
-//     field: 25,
-//   },
-// ];
-
 const rulesText = `
   For start choose mode from select dropdown.
   When you move mouse over square it's changing color into blue.
@@ -39,7 +23,6 @@ const Main = () => {
 
   useEffect(() => {
     apiGet(setFetched);
-    // setFetched(json);
   }, []);
 
   useEffect(() => {
