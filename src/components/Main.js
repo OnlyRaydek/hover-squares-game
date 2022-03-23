@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { useEffect, useState } from 'react'
 import AsidePanel from './AsidePanel';
 import { apiGet } from './helpers';
@@ -95,11 +96,17 @@ const Main = () => {
           <button className='startButton' onClick={startGame}>Start Game</button>
           <button className='rulesButton' onClick={rulesOfGame}>Rules</button>
         </div>
-        <SquaresList
-          squaresArray={squaresArray}
-          mode={modeFields.toLowerCase()}
-          onOverHandler={onOverHandler}
-        />
+        {squaresArray.length ?
+          <SquaresList
+            squaresArray={squaresArray}
+            mode={modeFields.toLowerCase()}
+            onOverHandler={onOverHandler}
+          /> : (
+            <div className={classNames('squaresBlock', 'chooseModeText')}>
+              Choose Mode
+            </div>
+          )
+        }
       </div>
       <div className='asideArea'>
         <AsidePanel squareInform={squareInform}/>
