@@ -1,0 +1,93 @@
+html {
+  font-size: 0;
+}
+
+.mainContainer {
+  margin: 20px;
+  display: flex;
+  align-items: flex-start;
+  font-size: 16px;
+
+  & .selectBlock {
+    margin-bottom: 20px;
+  }
+
+  & .squaresBlock {
+    display: grid;
+    width: 600px;
+    height: 600px;
+    padding: 0;
+    margin: 0;
+
+    &.easy-mode {
+      grid-template-rows: repeat(5, 1fr);
+      grid-template-columns: repeat(5, 1fr);
+
+      & .square {
+        padding: 20px;
+        list-style: none;
+        border: 1px solid #000;
+      }
+    }
+
+    &.normal-mode {
+      grid-template-rows: repeat(15, 1fr);
+      grid-template-columns: repeat(15, 1fr);
+
+      & .square {
+        padding: 15px;
+        list-style: none;
+        border: 1px solid #000;
+      }
+    }
+
+    &.hard-mode {
+      grid-template-rows: repeat(25, 1fr);
+      grid-template-columns: repeat(25, 1fr);
+
+      & .square {
+        padding: 10px;
+        list-style: none;
+        border: 1px solid #000;
+      }
+    }
+
+    & .square {
+      list-style: none;
+      border: 1px solid #000;
+
+      &.squareHovered {
+        background-color: aqua;
+      }
+    }
+  }
+
+  & .asideArea {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 600px;
+    padding-left: 80px;
+
+    & .asideHeader {
+      height: 30px;
+      font-size: 20px;
+    }
+
+    & .asideList {
+      padding: 0;
+      list-style: none;
+      max-height: 580px;
+      overflow: overlay;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    & .asideItem {
+      font-weight: 600;
+    }
+  }
+}
