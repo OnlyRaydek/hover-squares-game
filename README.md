@@ -1,4 +1,4 @@
-##Demo
+## Demo
 
 For a demo of the working app, please follow the link below.
 [DEMO LINK](http://onlyraydek.github.io/hover-squares-game)
