@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+##Demo
 
-[Demo Link](http://onlyraydek.github.io/hover-squares-game).
+For a demo of the working app, please follow the link below.
+[DEMO LINK](http://onlyraydek.github.io/hover-squares-game)
+
+# Getting Started with Create React App
 
 ## Available Scripts
 
